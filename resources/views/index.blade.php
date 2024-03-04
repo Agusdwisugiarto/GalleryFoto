@@ -55,7 +55,7 @@ https://templatemo.com/tm-556-catalog-z
     <div class="container-fluid tm-container-content tm-mt-60">
         <div class="row mb-4">
             <h2 class="col-6 tm-text-primary">
-                Top View
+                
             </h2>
         </div>
  <div class="row tm-mb-90 tm-gallery">
@@ -70,7 +70,7 @@ https://templatemo.com/tm-556-catalog-z
             </div>
             <div class="d-flex justify-content-between tm-text-black">
                 <span class="tm-text-black">{{ $post->deskripsi }}</span>
-                <span><i class="bi bi-heart"></i> <i class="bi bi-chat-dots"></i></span>
+                <span><i class="bi bi-heart"></i> <i class="bi bi-chat-left-text"></i></span>
             </div>
         </div>
         @endforeach

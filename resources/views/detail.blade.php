@@ -152,13 +152,13 @@
                     </div>
                     <div class="relative flex flex-col overflow-y-auto h-[200px] scrollbar-hidden">
                     @foreach($komen as $nama)
-                        <div class="flex flex-row justify-start mt-4 ml-auto">  
+                        <div class="flex mt-4 mr-40">  
                             <div class="w-1/4">
                                 <img src="{{ asset('foto_profile/' . $nama->user->foto_profile) }}  " class="w-8 h-8 rounded-full" alt="">
                             </div>
-                            <div class="flex flex-col mr-2">
+                            <div class="flex flex-col">
                                 <a href="/profillain/{{ $user->id }}"><h5 class="text-sm">{{$nama->user->nama_lengkap}}  :</h5></a>
-                                <small class="text-sm text-gray-500">waktu</small>
+                                <small class="text-sm text-gray-500"></small>
                             </div>
                             <h5 class="text-sm">{{ $nama->isi_komentar}}</h5>
                         </div>

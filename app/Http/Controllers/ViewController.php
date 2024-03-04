@@ -29,7 +29,8 @@ class ViewController extends Controller
     }
 
     public function like(Request $request){
-        return view('like');
+        $name = User::where('id', auth()->user()->id)->get();
+        return view('like', compact('name'));
     }
 
     public function upload(Request $request){

@@ -94,7 +94,7 @@
         </div>
       </nav>
 
-  <section class="mt-40">
+  <section class="mt-36">
     <div class="max-w-screen-xl ml-28 mx-auto">
         <div class="flex flex-wrap items-center flex-container">
             <div class="flex mt-2 bg-white">

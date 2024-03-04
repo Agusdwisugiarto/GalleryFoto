@@ -375,6 +375,15 @@ p, .tm-text-gray { color: #999; }
     color: #fff; 
 }
 
+.tombolSembunyi {
+    border: none;
+    background-color: transparent;
+}
+
+.tombolSembunyi:focus {
+    outline: none;
+}
+
 /*---------------*/
 /***** Ming *****/
 /*---------------*/

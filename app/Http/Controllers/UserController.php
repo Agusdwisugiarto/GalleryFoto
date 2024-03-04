@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Foto;
+use App\Models\Like;
 use App\Models\User;
 use App\Models\Album;
 use App\Models\Komentar;
@@ -105,10 +106,10 @@ class UserController extends Controller
     public function ubahpassword(Request $request){
         //cek password lama 
         if(!Hash::check($request->old_password, auth()->user()->password)){
-            return back()->with('error', 'Password lama salah harap isi yang benar');
+            return back();
         }
         if($request->new_password != $request->repeat_password){
-            return back()->with('error', 'Password baru dan konfirmasi password harus sama');
+            return back();
         }
 
         auth()->user()->update([
@@ -177,6 +178,21 @@ class UserController extends Controller
         $post = Album::find($id);
         $post->delete();
         return redirect('profil')->with('success', 'Anda Berhasil Menghapus Album');  
+    }
+
+    public function likefoto(Request $request){
+        $idfoto = $request->foto_id;
+        $liked = Like::where('foto_id', $idfoto)->where('users_id', auth()->id())->exists();
+        if($liked){
+            Like::where('foto_id', $idfoto)->where('users_id', auth()->id())->delete();
+            return redirect()->back()->with('success', 'kamu unlike');
+        }else{
+            Like::create([
+                'foto_id' => $idfoto,
+                'users_id' => auth()->id()
+            ]);
+            return redirect()->back()->with('success', 'Like berhasil');
+        }
     }
 }
 

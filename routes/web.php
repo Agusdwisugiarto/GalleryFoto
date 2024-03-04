@@ -52,6 +52,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/editpostingan/{id}', [ViewController::class, 'edit']);
     Route::post('/updatepostingan/{id}', [UserController::class, 'updatepos']);
     Route::get('/profillain/{id}', [ViewController::class, 'profilother']);
+    Route::post('/likefoto', [UserController::class, 'likefoto']);
 });
 
 

@@ -75,7 +75,16 @@ https://templatemo.com/tm-556-catalog-z
             </div>
             <div class="d-flex justify-content-between tm-text-black">
                 <span class="tm-text-black">{{ $post->deskripsi }}</span>
-                <span><i class="bi bi-chat-left-text"></i> <i class="bi bi-heart"></i></span>
+                <form action="/likefoto" method="POST">
+                    @csrf
+                    <input type="hidden" name="foto_id" value="{{ $post->id }}">
+                    <div>
+                    <button type="submit" class="tombolSembunyi">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                   <a href="/detail/{{ $post->id }}"><i class="bi bi-chat-left-text"></i></a>
+                    </div>
+                </form>
             </div>
         </div>
         @endforeach

@@ -120,7 +120,7 @@
         @csrf
         <div class="flex flex-wrap justify-between flex-container">
             <div class="flex flex-col items-center w-2/6 bg-white rounded-md shadow-md max-[480px]:w-full">
-                <img src="/img/users.png" alt="" class="rounded-full w-36 h-36">
+                <img src="{{ asset('foto_profile/' . $nama->foto_profile) }}" alt="" class="rounded-full w-36 h-36">
                 <input type="file" name="foto_profile" class="items-center w-48 h-10 mt-4 border rounded-md">
             </div>
             <div class="w-3/5 max-[480px]:w-full">
